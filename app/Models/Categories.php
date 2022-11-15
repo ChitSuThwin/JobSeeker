@@ -21,11 +21,11 @@ class Categories extends Model
     {
         return $this->belongsToMany(Employee::class,'employee_categories');
     }
-    // protected function createdAt(): Attribute
-    // {
-    //     return Attribute::make(
-    //         get: fn ($value) => Carbon::createFromFormat('Y-m-d H:i:s', $value)->diffForHumans(),
+    protected function createdAt(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => Carbon::createFromFormat('Y-m-d H:i:s', $value)->diffForHumans(),
            
-    //     );
-    // }
+        );
+    }
 }

@@ -133,9 +133,9 @@
                              @else
                              
                              <ul class="btns" style="height:35px;">
-                              
-                               <li> <a class="btn btn-sm  text-danger bg-white" data-target="#signin" data-toggle="modal" style="padding:0 2 0 2 ">Apply</a> </li>
-                           </ul>
+                                <li><a ass="btn btn-sm  text-danger bg-white" data-target="#signin" data-toggle="modal" style="padding:0 2 0 2  data-toggle="modal" data-target="#apply">Apply</a></li>
+                               
+                            </ul>
                           
                            @endif
                        </div>

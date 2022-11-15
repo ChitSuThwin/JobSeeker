@@ -32,9 +32,10 @@ class AppServiceProvider extends ServiceProvider
        PaginationPaginator::useBootstrap();
         if(Schema::hasTable('notifications')){
             $noti = Notifications::with('employee', 'jobs')->orderBy('created_at','DESC')->get();
+            $recent_noti = Notifications::with('employee', 'jobs')->where('is_read','0')->orderBy('created_at','DESC')->take(7)->get();
             $notis = Notifications::where('is_read', '0')->get();
         $notiCount = $notis->count();
-      
+        View::share('recent_notifications', $recent_noti);
             View::share('notifications', $noti);
             View::share('notiCount',$notiCount);
             

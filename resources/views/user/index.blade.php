@@ -125,8 +125,8 @@
                               @else
                               
                               <ul class="btns" style="height:35px;">
+                                <li><a ass="btn btn-sm  text-danger bg-white" data-target="#signin" data-toggle="modal" style="padding:0 2 0 2  data-toggle="modal" data-target="#apply">Apply</a></li>
                                
-                                <li> <a class="btn btn-sm  text-danger bg-white" data-target="#signin" data-toggle="modal" style="padding:0 2 0 2 ">Apply</a> </li>
                             </ul>
                            
                             @endif
@@ -289,7 +289,7 @@
         <div class="modal-content rounded-1">
             <div class="modal-body">
                 <div class="d-flex justify-content-between">
-                    <h4>Upload Your Resume</h4>
+                    <h4>Upload Your Resume with Photo</h4>
                     <button class="close" data-dismiss="modal">&times;</button>
                 </div>
                @if (Auth::check())

@@ -99,10 +99,12 @@ class ProfileController extends Controller
            
           
             $jobId=$request->jobId;
+          
              $fileName = time().$request->resume->GetClientOriginalName();  
              
              $employee = Employee::findOrFail($id);
-           
+         if(!empty($employee->name&&$employee->description&&$employee->phone&&$employee->email&&$employee->address) && $employee->is_verify) 
+         {
              if(!empty($employee->resume))
              {
                 unlink(public_path("resume\\".$employee->resume));
@@ -126,7 +128,18 @@ class ProfileController extends Controller
              broadcast(new SendNoti('Job Applied'));
              
                 return back()->with('msg','Job Applied Successfully');
-        
+         }
+         else
+         {
+            if(empty($employee->name&&$employee->description&&$employee->phone&&$employee->email&&$employee->address))
+            {
+                return redirect(route('profile'));
+            }
+            elseif(!$employee->is_verify)
+            {
+                return redirect(route('profile'));
+            }
+         }
 
         }catch(Exception $e){
             dd($e->getMessage());

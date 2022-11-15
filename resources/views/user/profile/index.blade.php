@@ -9,6 +9,11 @@
                 <h1 class="text-white">
                     User Profile		
                 </h2>	
+                <p class="d-flex align-items-center justify-content-center">
+                    <a class="text-white m-2" href="{{route('index')}}">Home </a> 
+                     <span class="lnr lnr-arrow-right text-white  m-2"></span>  
+                     <a  class="text-white  m-2" href="single.html "> Search</a>
+                </p>
             </div>											
         </div>
     </div>
@@ -17,11 +22,16 @@
 <section class="post-area my-5">
     <div class="container">
         <div class="row ">
-          <div class="col-lg-8">
+          <div class="col-lg-10 mx-auto">
             <div class="section">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="text-left mb-4">Your Account Info <small class="text-success">Verified</small></h3>
-                    <button onclick="updateInfo()" class="btn btn-outline-primary btn-sm py-1 px-3"> <i class="fa fa-pencil"></i> Edit Info</button>
+                    <h3 class="text-left mb-4">Your Account Info
+                        @if (Auth::guard('employee')->user()->is_verify == '0' && !Session::has('verify'))
+                        <small class="text-warning small ">Not Verified</small></h3>
+                        @else
+                        <small class="text-success small">Verified</small></h3>
+                    @endif 
+                 
                 </div>
                 @if (Auth::guard('employee')->user()->is_verify == '0' && !Session::has('verify'))
                     <div class="alert alert-danger">Please Verify Your Account. <a href="{{ route('send_verification') }}" class="alert-link">Verify Here</a></div>
@@ -38,7 +48,10 @@
                         echo "<div class='alert alert-danger'>Pleas fill all of your information or you cannot apply the job.</div>";
                     }
                 @endphp
-                <form id="account" action="{{ route('profile.update', Auth::guard('employee')->user()->id) }}" method="POST">
+                <div class=" d-flex justify-content-end">
+                   <button onclick="updateInfo()" class="btn btn-info btn-sm"> <i class="fa fa-pencil p-1 "></i> Fill Your Info</button>
+                </div>
+                   <form id="account" action="{{ route('profile.update', Auth::guard('employee')->user()->id) }}" method="POST">
                     @csrf
                     {{ method_field('put') }}
                     <div class="input-group-icon mt-10">
@@ -75,12 +88,13 @@
                         
                         </div>
                     </div>
-
-                    <button class="btn btn-sm btn-primary px-5 mt-3 w-100 updateBtn">Update</button>
+<div class="d-flex justify-content-center">
+                    <button class="btn btn-sm btn-danger px-5 mt-3 updateBtn">Save</button>
+</div>
                 </form>
             </div>
           </div>
-          <div class="col-lg-4">
+          {{-- <div class="col-lg-4">
             <label for="pp" class="avatar d-block border border-dashed color-7 py-5 text-center mt-5">
                 @if(Auth::guard('employee')->user()->avatar )
                 <img src="{{Auth::user()->avatar}}" style="width:200px;">
@@ -92,7 +106,7 @@
             </label>
             <input type="file" form="account" class="avatar" name="pp" hidden id="pp" disabled>
               
-          </div>
+          </div> --}}
         </div>
     </div>	
 </section>

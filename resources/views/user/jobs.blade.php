@@ -7,7 +7,7 @@
        <div class="row fullscreen d-flex align-items-center justify-content-center">
            <div class="banner-content col-lg-12">
                <h1 class="text-white">
-                   <span>{{count($j)}}+ </span> Jobs posted				
+                   <span  style="color: #9b1736">{{count($j)}}+ </span> Jobs posted				
                   
                </h1>	
                <form action="{{route('searchByKeyword')}}" method='POST' class="serach-form-area">
@@ -124,12 +124,10 @@
                            </ul>
                        </div>
                              @else
-                             
                              <ul class="btns" style="height:35px;">
-                              
-                               <li> <a class="btn btn-sm  text-danger bg-white" data-target="#signin" data-toggle="modal" style="padding:0 2 0 2 ">Apply</a> </li>
-                           </ul>
-                          
+                                <li><a ass="btn btn-sm  text-danger bg-white" data-target="#signin" data-toggle="modal" style="padding:0 2 0 2  data-toggle="modal" data-target="#apply">Apply</a></li>
+                               
+                            </ul>
                            @endif
                        </div>
                        <div class="d-flex align-items-center gap-1 mb-1 ">

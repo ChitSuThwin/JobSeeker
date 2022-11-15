@@ -2214,7 +2214,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .p1-gradient-bg, .banner-area .overlay-bg, .sidebar .single-slidebar .cat-list li:hover, .callto-action-area, .single-price:hover .price-bottom, .single-service:hover, .submit-right, .submit-left, .contact-btns, .form-area .primary-btn {
   background-image: -moz-linear-gradient(0deg, #5a5a5a 0%, #2a2835 100%);
-  background-image: -webkit-linear-gradient(0deg, #bfacff 0%, #5a066b 100%);
+  background-image: -webkit-linear-gradient(0deg, #eb0319 0%, hwb(282deg 0% 22%) 100%);
   background-image: -ms-linear-gradient(0deg, #5a5a5a 0%, #2a2835 100%);
 }
 

@@ -68,7 +68,7 @@ class AuthController extends Controller
                 return back();
             }
         }catch(Exception $e){
-            dd($e->getMessage());
+            // dd($e->getMessage());
             return back()->with('signin_error', 'Email or Password Wrong');
         }
         

@@ -18,7 +18,8 @@
     <!-- App Css-->
     <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- custom Css-->
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
 </head>
 
     <body>
@@ -53,7 +54,7 @@
 
                 <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
                     id="topnav-hamburger-icon">
-                    <span class="hamburger-icon">
+                    {{-- <span class="hamburger-icon"> --}}
                         <span></span>
                         <span></span>
                         <span></span>
@@ -459,7 +460,7 @@
                         <ul class="navbar-nav justify-content-center" id="navbar-nav">
                             <li class="menu-title"><span data-key="t-menu">Menu</span></li>
                             <li class="nav-item">
-                                <a class="nav-link menu-link @yield('dashboard')" href="#sidebarDashboards"
+                                <a class="nav-link menu-link @yield('dashboard')" href="{{ route('admin.index') }}"
                                     aria-expanded="false" aria-controls="sidebarDashboards">
                                     <i class="ri-dashboard-2-line"></i> <span data-key="t-dashboards">Dashboards</span>
                                 </a>
